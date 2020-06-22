@@ -6,9 +6,12 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('StopRemove') {
             steps {
-                sh 'rm -rf june'
+                sh 'ls -l'
+                sh 'docker container stop dpone'
+                sh 'docker container rm dpone'
+                sh 'docker image rmi akhil5001/on:latest'
             }
         }
         
