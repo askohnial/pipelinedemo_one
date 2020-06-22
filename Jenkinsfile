@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mkdir june'
+                sh 'rm -rf june'
             }
         }
         
