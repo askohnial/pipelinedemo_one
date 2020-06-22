@@ -1,21 +1,16 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label 'labeldockerserver'
+        }
+    }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                sh 'mkdir june'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+        
     }
 }
