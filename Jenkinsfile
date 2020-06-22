@@ -7,7 +7,7 @@ pipeline {
 
     stages {
         
-        stage('StopRemove') {
+        stage('clean') {
             when {
                 branch 'Develone'  //only run these steps on the master branch
             }
@@ -18,7 +18,7 @@ pipeline {
                 sh 'docker image rmi akhil5001/akhil_repo:latest'
             }
         }
-        stage('Build') {
+        stage('makeupload') {
             when {
                 branch 'Develone'  //only run these steps on the master branch
             }
@@ -28,7 +28,7 @@ pipeline {
                 
             }
         }
-        stage('Deploy') {
+        stage('run') {
             when {
                 branch 'Develone'  //only run these steps on the master branch
             }
