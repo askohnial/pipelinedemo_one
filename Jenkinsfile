@@ -24,7 +24,7 @@ pipeline {
             }
             steps {
                 sh 'docker build -t  akhil5001/akhil_repo .'
-                sh 'docker push akhil5001/akhil_repo:latest'
+                
                 
             }
         }
